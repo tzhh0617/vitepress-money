@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "vitepress dev docs",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
@@ -21,6 +20,10 @@
     "url": "https://github.com/tzhh0617/vitepress-money/issues"
   },
   "homepage": "https://github.com/tzhh0617/vitepress-money#readme",
+  "dependencies": {
+    "element-plus": "^2.4.4",
+    "vue": "^3.4.0"
+  },
   "devDependencies": {
     "vitepress": "1.0.0-rc.33"
   },
