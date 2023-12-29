@@ -3,8 +3,8 @@
 layout: home
 
 hero:
-  name: "Money Calculator"
-  text: "Money In/Out Calculator"
+  name: "Money"
+  text: "Money Calculator"
   tagline: My great project tagline
   actions:
     - theme: brand
