@@ -4,14 +4,15 @@ export enum MoneyIOType {
 }
 
 export enum MoneyIOPer {
-  DATE = "DATE",
-  EVERY_DAY = "DAY",
-  EVERY_MONTH = "MONTH",
+  PER_DATE = "DATE",
+  PER_DAY = "DAY",
+  PER_MONTH = "MONTH",
 }
 
 export type MoneyIO = {
   type: MoneyIOType;
   per: MoneyIOPer;
   perMonthDate?: string;
+  perDate?: string;
   amount: string;
 };
