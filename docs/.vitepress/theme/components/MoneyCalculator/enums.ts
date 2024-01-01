@@ -24,6 +24,8 @@ export type MoneyIORecord = {
   total: string;
 };
 
+export type PartialOf<T, P extends keyof T> = Omit<T, P> & Pick<Partial<T>, P>;
+
 export const selectRuquiredRule = [
   { required: true, message: "请选择", trigger: "blur" },
 ];
