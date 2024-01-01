@@ -122,11 +122,11 @@
 
                   <el-col :span="span6">
                     <el-form-item
-                      :prop="`inouts.${$index}.amount`"
+                      :prop="`inouts.${$index}.value`"
                       :rules="decimalRules"
                     >
                       <el-input
-                        v-model="row.amount"
+                        v-model="row.value"
                         clearable
                         placeholder="请输入"
                       />
@@ -149,56 +149,41 @@
     </el-row>
 
     <div>
+      <el-button @click="onClickReset">重置</el-button>
       <el-button type="primary" @click="onClickCalc">计算</el-button>
     </div>
   </el-form>
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
 import { FormInstance } from "element-plus";
+import { ref } from "vue";
+import {
+  MoneyIOPer,
+  MoneyIOType,
+  decimalRules,
+  selectRuquiredRule,
+} from "./enums";
 import { useSpan } from "./useSpan";
-import { MoneyIO, MoneyIOPer, MoneyIOType } from "./enums";
-import dayjs from "dayjs";
+import { createForm } from "./utils";
 
 const { spanOne, spanFull, span6 } = useSpan();
 
 const formRef = ref<FormInstance>();
-
-const form = ref({
-  startValue: "0",
-  startDate: dayjs().format("YYYY-MM-DD"),
-  inouts: [
-    {
-      type: MoneyIOType.OUT,
-      per: MoneyIOPer.PER_MONTH,
-      perMonthDate: "1",
-      amount: "0",
-    },
-  ] as MoneyIO[],
-});
+const form = ref(createForm());
 
 const onClickAdd = () => {
   form.value.inouts.push({
     type: MoneyIOType.OUT,
     per: MoneyIOPer.PER_MONTH,
     perMonthDate: "1",
-    amount: "0",
+    value: "0",
   });
 };
 
-const selectRuquiredRule = [
-  { required: true, message: "请选择", trigger: "blur" },
-];
-
-const decimalRules = [
-  { required: true, message: "请输入金额", trigger: "blur" },
-  {
-    pattern: /^([1-9]\d*|0)(\.\d{0,2})?$/,
-    message: "请输入正确的金额",
-    trigger: "blur",
-  },
-];
+const onClickReset = () => {
+  form.value = createForm();
+};
 
 const onClickCalc = async () => {
   await formRef.value!.validate();
