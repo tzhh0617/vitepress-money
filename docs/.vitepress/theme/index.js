@@ -2,13 +2,19 @@ import DefaultTheme from 'vitepress/theme'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
 
+
+const components = import.meta.glob(['./components/*/index.vue',], { eager: true });
+
 /** @type {import('vitepress').Theme} */
 export default {
     extends: DefaultTheme,
     enhanceApp({ app }) {
-        // register your custom global components
-        // app.component('MyGlobalComponent' /* ... */)
 
         app.use(ElementPlus)
+
+        for (let key in components) {
+            let [, name] = /[\/\\]([^\/\\]+)[\/\\]index\.vue/.exec(key);
+            app.component(name, components[key].default);
+        }
     }
 }
