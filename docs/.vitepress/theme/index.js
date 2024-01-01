@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
+import 'virtual:uno.css'
 
 
 const components = import.meta.glob(['./components/*/index.vue',], { eager: true });

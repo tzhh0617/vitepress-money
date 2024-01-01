@@ -21,10 +21,12 @@
   },
   "homepage": "https://github.com/tzhh0617/vitepress-money#readme",
   "dependencies": {
+    "dayjs": "^1.11.10",
     "element-plus": "^2.4.4",
     "vue": "^3.4.0"
   },
   "devDependencies": {
+    "unocss": "^0.58.2",
     "vitepress": "1.0.0-rc.33"
   },
   "pnpm": {
