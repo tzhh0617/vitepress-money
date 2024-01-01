@@ -1,7 +1,7 @@
 <template>
   <el-form
     ref="formRef"
-    class="w-full mt-32px"
+    class="w-full mt-32px vp-raw"
     :model="form"
     label-position="top"
   >
@@ -36,12 +36,12 @@
           :rules="selectRuquiredRule"
         >
           <el-table class="w-full!" :data="form.inouts" border>
-            <el-table-column type="index" label="编号" width="40" />
+            <el-table-column type="index" label="编号" width="54" />
             <el-table-column label="记录">
               <template #default="{ row }"> </template>
             </el-table-column>
 
-            <el-table-column label="操作" width="80">
+            <el-table-column label="操作" width="90">
               <template #default="{ $index }">
                 <el-button type="danger" @click="form.inouts.splice($index, 1)">
                   删除

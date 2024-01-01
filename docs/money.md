@@ -1,3 +1,5 @@
 # 流水计算器
 
-<MoneyCalculator />
+<ClientOnly>
+    <MoneyCalculator />
+</ClientOnly>

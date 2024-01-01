@@ -26,6 +26,7 @@
     "vue": "^3.4.0"
   },
   "devDependencies": {
+    "postcss": "^8.4.32",
     "unocss": "^0.58.2",
     "vitepress": "1.0.0-rc.33"
   },
