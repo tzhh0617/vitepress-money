@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-32px">
+  <div class="mt-32px vp-raw">
     <el-radio-group v-model="textMode">
       <el-radio-button label="html">html</el-radio-button>
       <el-radio-button label="text">text</el-radio-button>
