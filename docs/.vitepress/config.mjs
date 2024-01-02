@@ -15,16 +15,15 @@ export default defineConfig({
 
     sidebar: [
       {
-        text: 'Examples',
+        text: 'DevTools',
         items: [
-          { text: 'Markdown Examples', link: '/markdown-examples' },
-          { text: 'Runtime API Examples', link: '/api-examples' }
+          { text: '粘贴 HTML', link: '/paste-html' },
         ]
       },
       {
-        text: 'Tools',
+        text: 'Others',
         items: [
-          { text: '粘贴 HTML', link: '/paste-html' },
+          { text: '流水计算器', link: '/money' },
         ]
       }
     ],
